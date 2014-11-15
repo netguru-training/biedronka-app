@@ -4,7 +4,7 @@ FactoryGirl.define do
 address "MyString"
 description "MyString"
 city nil
-network nil
+company nil
   end
 
 end

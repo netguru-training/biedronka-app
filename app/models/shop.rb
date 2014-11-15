@@ -1,6 +1,6 @@
 class Shop < ActiveRecord::Base
   belongs_to :city
   belongs_to :company
-  has_many :products
+  has_many :shop_products
   has_many :products, through: :shop_products
 end

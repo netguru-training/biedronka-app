@@ -14,13 +14,12 @@
       %td
   %tbody
     - promotions.each do |promotion|
-    %tr
-      %td= promotion.name
-      %td= promotion.description
-      %td= promotion.start_date
-      %td= promotion.end_date
-      %td= promotion.modifier * 100
-      %td= promotion.product
-      %td= link_to 'Show', promotion_path
-      %td= link_to 'Edit', edit_promotion_path
-      %td= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' }
+      %tr
+        %td= promotion.name
+        %td= promotion.description
+        %td= promotion.start_date
+        %td= promotion.end_date
+        %td= promotion.modifier
+        %td= promotion.product.name
+        %td= link_to 'Show', city_promotions_path
+        %td= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' }

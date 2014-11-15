@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20141115114242) do
+=======
 ActiveRecord::Schema.define(version: 20141115114150) do
+>>>>>>> 52fe4cedf05cf4368f73e6927e24b1daa4976c86
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +53,7 @@ ActiveRecord::Schema.define(version: 20141115114150) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "product_id"
+    t.decimal  "modifier",    precision: 8, scale: 2
   end
 
   create_table "shop_products", force: true do |t|

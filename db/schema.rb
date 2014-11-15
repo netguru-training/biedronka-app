@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141115114242) do
+=======
+ActiveRecord::Schema.define(version: 20141115120611) do
+>>>>>>> 51824b15a268205dc88fad7f9fbf22db0f0258e4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +55,8 @@ ActiveRecord::Schema.define(version: 20141115114242) do
     t.integer  "product_id"
     t.decimal  "modifier",    precision: 8, scale: 2
   end
+
+  add_index "promotions", ["product_id"], name: "index_promotions_on_product_id", using: :btree
 
   create_table "shop_products", force: true do |t|
     t.integer  "shop_id"

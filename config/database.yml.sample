@@ -19,7 +19,7 @@ development:
   database: biedronka-app_development
   pool:     5
   username: postgres
-  password: 
+  password:
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -57,5 +57,5 @@ production:
   database: biedronka-app_production
   pool:     5
   username: postgres
-  password: 
+  password:
   template: template0

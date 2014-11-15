@@ -59,3 +59,9 @@ end
   modifier = 0 + rand(1..50)/100.00
   Promotion.create!(start_date: start_date, end_date: end_date, name: name, description: desc, product_id: product_id, modifier: modifier)
 end
+
+5.times do |n|
+  product_id = n + 1
+  shop_id = rand(1..17)
+  ShopProduct.create!(product_id: product_id, shop_id: shop_id)
+end

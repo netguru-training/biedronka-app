@@ -1,12 +1,13 @@
 class PromotionsController < ApplicationController
-  before_action :verify_admin, only: [:edit, :update, :create, :destroy]
+  before_action :verify_admin, only: [:create, :destroy]
 
 
   expose(:city)
   expose(:shops) { city.shops }
-  expose(:promotions)   
+  expose(:promotions)
+  expose(:promotion)
 
-  
+
   def index
 
   end
@@ -25,12 +26,22 @@ class PromotionsController < ApplicationController
   end
 
   def update
+    promotion = promotions.find(params[:id])
+    if promotion.update(promotion_params)
+      redirect_to city_promotions_path, notice: 'Promotion successfully updated'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
   end
 
   private
+
+  def promotion_params
+    params.require(:promotion).permit(:name, :description, :start_date, :end_date, :modifier, :city_id)
+  end
 
   def verify_admin
     unless current_user.admin?

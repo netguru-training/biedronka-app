@@ -1,6 +1,6 @@
 %h1 Listing promotions
 
-%table
+%table.table.table-hover
   %thead
     %tr
       %td Name
@@ -17,9 +17,10 @@
       %tr
         %td= promotion.name
         %td= promotion.description
-        %td= promotion.start_date
-        %td= promotion.end_date
-        %td= promotion.modifier
+        %td= promotion.start_date.to_formatted_s(:short)
+        %td= promotion.end_date.to_formatted_s(:short)
+        %td= promotion.modifier * 100
         %td= promotion.product.name
-        %td= link_to 'Show', city_promotions_path
-        %td= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', city_promotion_path(city,promotion), class: 'btn btn-default'
+        %td= link_to 'Edit', edit_city_promotion_path(city,promotion), class: 'btn btn-default'
+        %td= link_to 'Delete', city_promotion_path(city,promotion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'

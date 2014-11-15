@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115104838) do
+ActiveRecord::Schema.define(version: 20141115105651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20141115104838) do
     t.datetime "updated_at"
   end
 
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "shop_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["shop_id"], name: "index_products_on_shop_id", using: :btree
+
   create_table "promotions", force: true do |t|
     t.datetime "start_date"
     t.datetime "end_date"
@@ -30,6 +40,29 @@ ActiveRecord::Schema.define(version: 20141115104838) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "shop_products", force: true do |t|
+    t.integer  "shop_id"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shop_products", ["product_id"], name: "index_shop_products_on_product_id", using: :btree
+  add_index "shop_products", ["shop_id"], name: "index_shop_products_on_shop_id", using: :btree
+
+  create_table "shops", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "description"
+    t.integer  "city_id"
+    t.integer  "network_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shops", ["city_id"], name: "index_shops_on_city_id", using: :btree
+  add_index "shops", ["network_id"], name: "index_shops_on_network_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

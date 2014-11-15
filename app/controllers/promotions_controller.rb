@@ -1,6 +1,8 @@
 class PromotionsController < ApplicationController
   before_action :verify_admin, only: [:edit, :update, :create, :destroy]
 
+  expose(:promotions)
+
   def verify_admin
     unless current_user.admin?
       flash[:error] = "You have insufficient right to do this."

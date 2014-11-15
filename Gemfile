@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'draper'
+gem 'decent_exposure'
+gem 'decent_decoration'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'

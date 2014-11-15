@@ -1,0 +1,21 @@
+- promotion = promotions.find(params[:id])
+%h1= promotion.name
+
+%h2= promotion.description
+
+%br/
+%p
+  Promotion starts:
+  = promotion.start_date.to_formatted_s(:short)
+%p
+  Promotion ends:
+  = promotion.end_date.to_formatted_s(:short)
+
+%h3
+  Discount
+  = promotion.modifier*100
+  \%
+
+%p
+  = link_to 'Edit', edit_city_promotion_path(city,promotion), class: 'btn btn-default'
+  = link_to 'Delete', city_promotion_path(city,promotion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'

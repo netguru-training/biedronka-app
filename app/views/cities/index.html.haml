@@ -1,7 +1,11 @@
 %h1.text-center Find the best offers in your city
 
 .col-md-8.col-md-offset-2
-  - cities.each do |city|
-    .row.text-center
-      = link_to city.name, city_promotions_path(city), class: 'btn btn-lg btn-primary btn-city'
-      %br
+  .col-md-4.col-md-offset-4
+    %table.table
+      - cities.each do |city|
+        %tr
+          %td
+            %h4
+              = link_to city.name, city_promotions_path(city)
+              .badge.float-right.shop-count= "#{city.shops.count} shops"

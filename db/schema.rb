@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141115114150) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "product_id"
   end
 
   create_table "shop_products", force: true do |t|

@@ -1,0 +1,25 @@
+%h1 Listing promotions
+
+%table
+  %thead
+    %tr
+      %td Name
+      %td Description
+      %td Starting date
+      %td Ending date
+      %td Discount %
+      %td Product
+      %td
+      %td
+      %td
+  %tbody
+    - promotions.each do |promotion|
+      %tr
+        %td= promotion.name
+        %td= promotion.description
+        %td= promotion.start_date
+        %td= promotion.end_date
+        %td= promotion.modifier
+        %td= promotion.product.name
+        %td= link_to 'Show', city_promotions_path
+        %td= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' }

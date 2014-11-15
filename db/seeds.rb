@@ -56,6 +56,6 @@ end
   desc = "Cheaper products 4all"
   name = "Food promotions"
   product_id = n + 1
-  modifier = 0 + rand(1..50)/100
+  modifier = 0 + rand(1..50)/100.00
   Promotion.create!(start_date: start_date, end_date: end_date, name: name, description: desc, product_id: product_id, modifier: modifier)
 end

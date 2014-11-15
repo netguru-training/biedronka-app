@@ -1,4 +1,4 @@
-class CityDecorator < Draper::Decorator
+class CityDecorator < BaseDecorator
   delegate_all
 
   def lorem

@@ -1,2 +1,13 @@
-%h1 Cities#show
-%p Find me in app/views/cities/show.html.haml
+%h1= "All shops in #{city.name}"
+
+.col-md-8.col-md-offset-2
+  %table.table
+    %tr
+      %th Shop name
+      %th Company
+      %th Products
+    - city.shops.each do |shop|
+      %tr
+        %td= shop.name
+        %td= shop.company.name
+        %td= shop.products.count

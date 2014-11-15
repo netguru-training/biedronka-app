@@ -3,5 +3,5 @@
 .col-md-8.col-md-offset-2
   - cities.each do |city|
     .row.text-center
-      = link_to city.name, city, class: 'btn btn-lg btn-primary btn-city'
+      = link_to city.name, city_promotions_path(city), class: 'btn btn-lg btn-primary btn-city'
       %br

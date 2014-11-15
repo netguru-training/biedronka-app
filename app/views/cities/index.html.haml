@@ -1,2 +1,7 @@
-%h1 Cities#index
-%p Find me in app/views/cities/index.html.haml
+%h1.text-center Find the best offers in your city
+
+.col-md-8.col-md-offset-2
+  - cities.each do |city|
+    .row.text-center
+      = link_to city.name, city, class: 'btn btn-lg btn-primary btn-city'
+      %br

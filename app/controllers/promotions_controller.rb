@@ -6,10 +6,9 @@ class PromotionsController < ApplicationController
   expose(:city)
   expose(:shops) { city.shops }
   expose(:promotions)
-  expose(:promotion)
+  expose(:promotion, params: :promotion_params)
 
   def update
-    #promotion = promotions.find(params[:id])
     if promotion.update(promotion_params)
       redirect_to city_promotions_path, notice: 'Promotion successfully updated'
     else

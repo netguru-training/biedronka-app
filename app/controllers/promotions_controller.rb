@@ -9,6 +9,12 @@ class PromotionsController < ApplicationController
   expose(:promotion)
 
   def create
+    promotion = Promotion.new(promotion_params)
+    if promotion.save
+      redirect_to city_promotions_path(city), notice: 'Promotion was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def index

@@ -1,10 +1,6 @@
-jQuery ->
+$(document).on "page:load", ->
   $('#start-datetimepicker').datetimepicker()
   $('#end-datetimepicker').datetimepicker()
-
-
-
-jQuery ->
   $('#promotions-table').dataTable
     bJQueryUI: true
     bProcessing: true

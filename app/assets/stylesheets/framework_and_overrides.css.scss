@@ -2,6 +2,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
+@import 'jquery.ui.core';
+@import 'jquery.ui.theme';
 
 // make all images responsive by default
 img {

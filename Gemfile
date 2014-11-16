@@ -22,6 +22,9 @@ gem 'simple_form'
 gem 'pry'
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-sass-rails'
+gem 'will_paginate'
 
 group :development do
   gem 'better_errors'

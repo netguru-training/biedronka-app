@@ -2,7 +2,6 @@ class PromotionsController < ApplicationController
   before_action :is_signed_in, only: [:create, :update, :destroy]
   before_action :verify_admin, only: [:create, :update, :destroy]
 
-
   expose(:city)
   expose(:shops) { city.shops }
   expose(:products) {city.products}
@@ -10,7 +9,13 @@ class PromotionsController < ApplicationController
   expose(:promotion)
 
   def create
+  end
 
+  def index
+    respond_to do |format|
+      format.html
+      format.json { render json: PromotionsDatatable.new(view_context, current_user) }
+    end
   end
 
   def update

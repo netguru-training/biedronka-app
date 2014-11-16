@@ -1,0 +1,22 @@
+= form_for product do |f|
+
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :description
+    = f.text_field :description, class: 'form-control'
+  .form-group
+    = f.label :base_price
+    = f.text_field :base_price, class: 'form-control'
+  .form-group
+    = f.label :shop_id
+    = f.text_field :shop_id, class: 'form-control'
+  .form-group
+    = f.label :category
+    = f.text_field :category, class: 'form-control'
+  .form-group
+    = f.label :image
+    = f.text_field :image, class: 'form-control'
+
+  = f.submit 'Save', class: 'btn btn-primary'

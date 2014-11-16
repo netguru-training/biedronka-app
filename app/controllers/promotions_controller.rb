@@ -7,24 +7,6 @@ class PromotionsController < ApplicationController
   expose(:promotions)
   expose(:promotion)
 
-
-  def index
-
-  end
-
-  def show
-
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def create
-  end
-
   def update
     promotion = promotions.find(params[:id])
     if promotion.update(promotion_params)
@@ -32,9 +14,6 @@ class PromotionsController < ApplicationController
     else
       render action: 'edit'
     end
-  end
-
-  def destroy
   end
 
   private

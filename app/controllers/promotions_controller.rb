@@ -35,7 +35,7 @@ class PromotionsController < ApplicationController
   def verify_admin
     unless current_user.admin?
       flash[:error] = "You have insufficient right to do this."
-      redirect_to promotion_index_path
+      redirect_to city_promotions_path
     end
   end
 

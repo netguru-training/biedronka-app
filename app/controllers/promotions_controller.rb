@@ -6,7 +6,7 @@ class PromotionsController < ApplicationController
   expose(:city)
   expose(:shops) { city.shops }
   expose(:promotions)
-  expose(:promotion, params: :promotion_params)
+  expose(:promotion)
 
   def update
     if promotion.update(promotion_params)

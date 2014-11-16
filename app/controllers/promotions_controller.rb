@@ -28,15 +28,4 @@ class PromotionsController < ApplicationController
     params.require(:promotion).permit(:name, :description, :start_date, :end_date, :modifier, :city_id)
   end
 
-  def is_signed_in
-    redirect_to city_promotions_path, notice: 'Sorry, you are not signed in!' unless user_signed_in?
-  end
-
-  def verify_admin
-    unless current_user.admin?
-      flash[:error] = "You have insufficient right to do this."
-      redirect_to city_promotions_path
-    end
-  end
-
 end

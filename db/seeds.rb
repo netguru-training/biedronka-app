@@ -46,7 +46,7 @@ end
   desc = products_desc[n]
   base_price = rand(0..50).to_s + "." + rand(0..100).to_s
   category = "Food"
-  Product.create!(name: name, base_price: base_price, description: desc,shop_id: shop_id, category: category)
+  Product.create!(name: name, base_price: base_price, description: desc, category: category)
 end
 
 5.times do |n|

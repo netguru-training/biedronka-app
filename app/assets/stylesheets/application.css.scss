@@ -19,11 +19,18 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #f3f0fa;
+  background-color: #f3f0fa !important;
+}
+
+.main-jumbotron {
+  background-image: url('jumbo.jpg');
+  color: white;
+  padding: 10px;
 }
 
 main {
-  background-color: #ebdffe
+  padding-top: 20px;
+  background-color: #ebdffe;
 }
 
 .shop-count {

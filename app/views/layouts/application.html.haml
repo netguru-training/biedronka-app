@@ -12,5 +12,7 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       .container
+        .jumbotron.main-jumbotron
+          %h1= content_for?(:title) ? yield(:title) : 'Biedronka App'
         = render 'layouts/messages'
         = yield

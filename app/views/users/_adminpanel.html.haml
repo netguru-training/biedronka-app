@@ -1,7 +1,19 @@
-%h2 Admin panel
 
-%h3 Manage cities:
-=link_to 'Manage cities', cities_path, class: 'btn btn-default'
 
-%h3 Manage products:
-=link_to 'Manage products', products_path, class: 'btn btn-default'
+.col-md-8.col-md-offset-2
+  .col-md-6.col-md-offset-3
+    %table.table
+      %thead
+        %tr
+          %td 
+            %h2 Admin panel
+        %tr
+          %td Options:
+          %td Manage:
+      %tbody
+        %tr
+          %td Cities
+          %td= link_to 'Manage cities', cities_path, class: 'btn btn-default' 
+        %tr
+          %td Products
+          %td= link_to 'Manage products', products_path, class: 'btn btn-default'

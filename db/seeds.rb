@@ -68,29 +68,28 @@ end
 
 
 User.new(
-  first_name: 'Jan', 
-  last_name: 'Kowalski', 
-  email: 'jan.kowalski@gmail.com', 
-  password: '12345678', 
-  password_confirmation: '12345678', 
+  first_name: 'Jan',
+  last_name: 'Kowalski',
+  email: 'jan.kowalski@gmail.com',
+  password: '12345678',
+  password_confirmation: '12345678',
   admin: true
 ).save
 
 User.new(
-  first_name: 'Janusz', 
-  last_name: 'Nowak', 
-  email: 'janusz.nowak@gmail.com', 
-  password: '12345678', 
-  password_confirmation: '12345678', 
+  first_name: 'Janusz',
+  last_name: 'Nowak',
+  email: 'janusz.nowak@gmail.com',
+  password: '12345678',
+  password_confirmation: '12345678',
   admin: false
 ).save
 
 User.new(
-  first_name: 'Nick', 
-  last_name: 'Down', 
-  email: 'nick.down@gmail.com', 
-  password: '12345678', 
-  password_confirmation: '12345678', 
+  first_name: 'Nick',
+  last_name: 'Down',
+  email: 'nick.down@gmail.com',
+  password: '12345678',
+  password_confirmation: '12345678',
   admin: false
 ).save
-

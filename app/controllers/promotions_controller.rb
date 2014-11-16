@@ -19,7 +19,7 @@ class PromotionsController < ApplicationController
 
   def destroy
     promotion.destroy
-    redirect_to city_promotions_path, notice: 'Promotion successfully deleted' 
+    redirect_to city_promotions_path, notice: 'Promotion successfully deleted'
   end
 
   private

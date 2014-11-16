@@ -5,12 +5,20 @@
   .form-group
     = f.label :description
     = f.text_field :description, class: 'form-control'
+
   .form-group
     = f.label :start_date
-    = f.date_field :start_date, class: 'form-control'
+    #start-datetimepicker.input-group.date
+      = f.text_field :start_date, class: 'form-control'
+      %span.input-group-addon
+        %span.glyphicon.glyphicon-calendar
   .form-group
     = f.label :end_date
-    = f.date_field :end_date, class: 'form-control'
+    #end-datetimepicker.input-group.date
+      = f.text_field :end_date, class: 'form-control'
+      %span.input-group-addon
+        %span.glyphicon.glyphicon-calendar
+
   .form-group
     = f.label :modifier
     = f.text_field :modifier, class: 'form-control'

@@ -5,7 +5,7 @@ class PromotionsController < ApplicationController
   expose(:city)
   expose(:shops) { city.shops }
   expose(:products) {city.products}
-  expose(:promotions)
+  expose(:promotions) { city.promotions }
   expose(:promotion)
 
   def create

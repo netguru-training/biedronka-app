@@ -24,7 +24,7 @@
       %td
         =product.category
       %td
-        =image_tag(product.image, size: '100') if product.image
+        =image_tag(product.image, size: '100') if product.image.present?
       %td
         = link_to 'Show', product_path(product)
       - if current_user.present? && current_user.admin?

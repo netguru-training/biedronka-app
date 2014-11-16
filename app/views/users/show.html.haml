@@ -1,6 +1,9 @@
 %h1
   Hello,
-  = user.first_name if user.first_name
+  - if user.name
+    = user.name
+  - else
+    = user.first_name
 %p
   Your email is: 
   %a

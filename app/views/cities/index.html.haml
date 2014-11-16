@@ -14,3 +14,7 @@
             %td
               = link_to 'Edit', edit_city_path(city), class: 'btn btn-default'
               = link_to 'Delete', city_path(city), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+      - if current_user.present? && current_user.admin?
+        %tr
+          %td
+            = link_to 'Add new city', new_city_path(city), class: 'btn btn-default'

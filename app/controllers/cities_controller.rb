@@ -5,6 +5,15 @@ class CitiesController < ApplicationController
   expose :cities
   expose :city
 
+  def create
+    new_city = City.new(city_params)
+    if new_city.save
+      redirect_to cities_path, notice: 'City was successfully created.'
+    else
+      render action: 'new'
+    end
+  end
+
   def update
     if city.update(city_params)
       redirect_to cities_path, notice: 'City successfully updated'

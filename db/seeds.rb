@@ -15,6 +15,7 @@ company_desc = ["Lidl jest tani", "Codziennie niskie ceny", "Duzo, tanio Tesco"]
 
 products_names = ["Bread", "Cammembert", "Apple juice", "Mineral water", "Beer"]
 products_desc = ["White bread", "Cammembert cheese", "Fresh apple juice", "Low-mineral water", "Kasztelan beer"]
+images = ["bread.jpg", "cammembert.jpg", "juice.jpg", "mineral.jpg", "beer.jpg"]
 streets = %w[Krakowska Warszawska Pilsudskiego Dluga Cicha Dabrowskiego]
 
 6.times do |n|

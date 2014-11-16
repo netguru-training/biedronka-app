@@ -10,3 +10,7 @@
               = link_to city.name, city_promotions_path(city)
               .badge.pull-right.shop-count= "#{city.shops.count} shops"
               .badge.pull-right.promo-count= "#{city.promotions.count} promotions"
+          - if current_user.present? && current_user.admin?
+            %td
+              = link_to 'Edit', edit_city_path(city), class: 'btn btn-default'
+              = link_to 'Delete', city_path(city), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'

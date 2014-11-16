@@ -1,5 +1,13 @@
-%h3 User
+%h1
+  Hello,
+  = user.first_name if user.first_name
 %p
-  Name: #{user.name if user.name}
+  Your email is: 
+  %a
+    #{user.email if user.email}
 %p
-  Email: #{user.email if user.email}
+  If you want to edit your account click here:
+%p
+  =link_to 'Edit', edit_user_registration_path, class: 'btn btn-default'
+
+=render 'adminpanel'

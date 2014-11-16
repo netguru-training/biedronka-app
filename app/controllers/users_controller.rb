@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
   before_action :is_signed_in
-  before_action :verify_admin, only: [:index,:show]
+  # before_action :verify_admin, only: [:index,:show]
 
   expose(:users)
   expose(:user)

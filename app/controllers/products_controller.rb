@@ -1,11 +1,6 @@
 class ProductsController < ApplicationController
   expose(:products)
   expose(:product)
-  def index
-  end
-
-  def new
-  end
 
   def create
     self.product = Product.new(product_params)
@@ -16,9 +11,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     if product.update(product_params)
       redirect_to products_path, notice: 'Product was successfully updated.'
@@ -27,7 +19,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
+  def destroy
+    product.destroy && redirect_to(products_path)
   end
 
   private

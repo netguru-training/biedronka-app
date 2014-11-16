@@ -17,6 +17,8 @@
   \%
 
 %p
-  = link_to 'Edit', edit_city_promotion_path(city,promotion), class: 'btn btn-default'
-  = link_to 'Delete', city_promotion_path(city,promotion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+  - if current_user.present? && current_user.admin?
+    = link_to 'Edit', edit_city_promotion_path(city,promotion), class: 'btn btn-default'
+    = link_to 'Delete', city_promotion_path(city,promotion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+
   = link_to 'Back', city_promotions_path, class: 'btn btn-default'

@@ -1,5 +1,6 @@
 class PromotionsController < ApplicationController
-  before_action :verify_admin, only: [:create, :destroy]
+  before_action :is_signed_in, only: [:create, :update, :destroy]
+  before_action :verify_admin, only: [:create, :update, :destroy]
 
 
   expose(:city)
@@ -7,26 +8,8 @@ class PromotionsController < ApplicationController
   expose(:promotions)
   expose(:promotion)
 
-
-  def index
-
-  end
-
-  def show
-
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def create
-  end
-
   def update
-    promotion = promotions.find(params[:id])
+    #promotion = promotions.find(params[:id])
     if promotion.update(promotion_params)
       redirect_to city_promotions_path, notice: 'Promotion successfully updated'
     else
@@ -35,6 +18,8 @@ class PromotionsController < ApplicationController
   end
 
   def destroy
+    promotion.destroy
+    redirect_to city_promotions_path, notice: 'Promotion successfully deleted' 
   end
 
   private
@@ -43,10 +28,14 @@ class PromotionsController < ApplicationController
     params.require(:promotion).permit(:name, :description, :start_date, :end_date, :modifier, :city_id)
   end
 
+  def is_signed_in
+    redirect_to city_promotions_path, notice: 'Sorry, you are not signed in!' unless user_signed_in?
+  end
+
   def verify_admin
     unless current_user.admin?
       flash[:error] = "You have insufficient right to do this."
-      redirect_to promotion_index_path
+      redirect_to city_promotions_path
     end
   end
 

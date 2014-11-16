@@ -20,7 +20,7 @@ class PromotionsController < ApplicationController
 
   def update
     if promotion.update(promotion_params)
-      redirect_to city_promotions_path, notice: 'Promotion successfully updated'
+      redirect_to city_promotions_path(city), notice: 'Promotion successfully updated'
     else
       render action: 'edit'
     end
@@ -28,7 +28,7 @@ class PromotionsController < ApplicationController
 
   def destroy
     promotion.destroy
-    redirect_to city_promotions_path, notice: 'Promotion successfully deleted'
+    redirect_to city_promotions_path(city), notice: 'Promotion successfully deleted'
   end
 
   private

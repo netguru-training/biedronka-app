@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+# user = CreateAdminService.new.call
+# puts 'CREATED ADMIN USER: ' << user.email
 
 cities = %w[Warsaw Rzeszow Poznan Krakow Wroclaw Gdansk]
 
@@ -65,3 +65,32 @@ end
   shop_id = rand(1..17)
   ShopProduct.create!(product_id: product_id, shop_id: shop_id)
 end
+
+
+User.new(
+  first_name: 'Jan', 
+  last_name: 'Kowalski', 
+  email: 'jan.kowalski@gmail.com', 
+  password: '12345678', 
+  password_confirmation: '12345678', 
+  admin: true
+).save
+
+User.new(
+  first_name: 'Janusz', 
+  last_name: 'Nowak', 
+  email: 'janusz.nowak@gmail.com', 
+  password: '12345678', 
+  password_confirmation: '12345678', 
+  admin: false
+).save
+
+User.new(
+  first_name: 'Nick', 
+  last_name: 'Down', 
+  email: 'nick.down@gmail.com', 
+  password: '12345678', 
+  password_confirmation: '12345678', 
+  admin: false
+).save
+

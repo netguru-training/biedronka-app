@@ -7,7 +7,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'BiedronkaApp', root_path, class: 'navbar-brand'
+        %nav.navbar
+      = link_to root_path, class: 'navbar-brand' do
+        = image_tag('logo.png', size: '25x25', class: 'img-responsive pull-left')
+        %span.logo.pull-left BiedronkaApp
+
+      -# = link_to root_path, class: 'navbar-brand' do
+        -# = image_tag('logo.png', size: '30x30', class: 'pull-left')
+        -# %h2.pull-left BiedronkaApp
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.pull-right
         = render 'layouts/navigation_links'

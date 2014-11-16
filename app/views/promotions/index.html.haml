@@ -1,17 +1,17 @@
 %h1 Listing promotions
 
-%table.table.table-hover
+%table.table
   %thead
     %tr
-      %td Name
-      %td Description
-      %td Starting date
-      %td Ending date
-      %td Discount %
-      %td Product
-      %td
-      %td
-      %td
+      %th Name
+      %th Description
+      %th Starting date
+      %th Ending date
+      %th Discount %
+      %th Product
+      %th
+      %th
+      %th
   %tbody
     - promotions.each do |promotion|
       %tr
@@ -28,3 +28,4 @@
         - else
           %td
           %td
+

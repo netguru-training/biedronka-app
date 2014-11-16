@@ -8,6 +8,10 @@ class PromotionsController < ApplicationController
   expose(:promotions)
   expose(:promotion)
 
+  def create
+
+  end
+
   def update
     if promotion.update(promotion_params)
       redirect_to city_promotions_path, notice: 'Promotion successfully updated'
@@ -24,7 +28,7 @@ class PromotionsController < ApplicationController
   private
 
   def promotion_params
-    params.require(:promotion).permit(:name, :description, :start_date, :end_date, :modifier, :city_id)
+    params.require(:promotion).permit(:name, :description, :start_date, :end_date, :modifier, :city_id, :product_id)
   end
 
 end
